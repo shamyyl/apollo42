@@ -1,0 +1,19 @@
+.layout {
+  padding: 0 7.85rem;
+
+  .nav {
+    padding: 72px 0;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .layout {
+    padding: 0 5rem;
+  }
+}
+
+@media all and (max-width: 568px) {
+  .layout {
+    padding: 0 3rem;
+  }
+}

@@ -1,0 +1,234 @@
+.nft-card-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 3rem;
+}
+
+.nft-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3rem;
+  transition: all 0.45s;
+  margin-bottom: auto;
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(181.09deg, rgba(43, 51, 64, 0.7) 0.93%, rgba(43, 51, 64, 0) 110.1%);
+
+  &.hovered {
+    box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(180deg, #33414E 36.67%, #142330 101.73%, #12202E 107.44%);
+    margin-top: -3.75rem;
+    .content {
+      max-height: calc(241px - 4rem);
+    }
+    .nft-name {
+      opacity: 1;
+      transform: scale(1.1) translateX(5%);
+    }
+    .price {
+      opacity: 0.5;
+    }
+    .hover-shadow {
+      opacity: 1;
+      transform: translateX(-50%) scaleY(1);
+    }
+    .social {
+      max-height: 200px;
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+      padding-top: 1.5rem;
+      padding-bottom: 0.6875rem;
+    }
+  }
+
+  .image-container {
+    width: 100%;
+    aspect-ratio: 1.415/1;
+  }
+  .main-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 3rem 3rem 0 0;
+    aspect-ratio: 1.415/1;
+  }
+  .content {
+    padding: 2rem;
+    height: 50%;
+    overflow: hidden;
+    backdrop-filter: blur(25px);
+    border-radius: 0 0 3rem 3rem;
+    max-height: calc(190px - 4rem);
+    transition: all 0.45s;
+    .row {
+      display: flex;
+      align-items: center;
+      &+.row {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+
+  .user-image {
+    width: 2.375rem;
+    height: 2.375rem;
+    border-radius: 0.625rem;
+    filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.15));
+    margin-right: 0.9375rem;
+  }
+  .user {
+    display: flex;
+    flex-direction: column;
+  }
+  .name {
+    color: #fff;
+    font-size: 0.75rem;
+    line-height: 1.5625rem;
+    letter-spacing: 0.05em;
+    max-width: 105px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .date {
+    font-weight: 500;
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    letter-spacing: 0.05em;
+    color: #fff;
+    opacity: 0.3;
+    text-transform: uppercase;
+  }
+
+  .views-count {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    img {
+      width: 1rem;
+      height: 0.75rem;
+      margin-right: 0.625rem;
+    }
+    span {
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.625rem;
+      line-height: 1.5625rem;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  .nft-name {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    letter-spacing: 0.05em;
+    color: #fff;
+    opacity: 0.2;
+    transition: all 0.45s;
+    max-width: 50%;
+  }
+  .price {
+    margin-left: auto;
+    font-size: 0.875rem;
+    line-height: 1.5625rem;
+    letter-spacing: 0.05em;
+    color: #fff;
+    opacity: 0.3;
+    transition: all 0.45s;
+    text-transform: uppercase;
+  }
+
+  .social {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(2rem);
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    transition: all 0.45s;
+
+    button {
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      svg {
+        margin-right: 0.625rem;
+      }
+      span {
+        color: #fff;
+        opacity: 0.3;
+        transition: all 0.3s;
+      }
+      & + button {
+        margin-left: 2rem;
+      }
+      svg {
+        transition: all 0.3s;
+        path {
+          transition: all 0.3s;
+        }
+      }
+      &.like {
+        .like-animation {
+          transition: all 0.3s;
+          transform: scale(1.3);
+          path {
+            transition: all 0.3s;
+            stroke: #FF70B4;
+            opacity: 1;
+          }
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        &.like {
+          svg {
+            path {
+              stroke: #FF70B4;
+              opacity: 1;
+            }
+          }
+          span {
+            color: #FF70B4;
+            opacity: 1;
+          }
+        }
+        &.comment {
+          svg {
+            path {
+              stroke: #70a7ff;
+              opacity: 1;
+            }
+          }
+          span {
+            color: #70a7ff;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .hover-shadow {
+    opacity: 0;
+    width: 63%;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    background: #000000;
+    filter: blur(45px);
+    height: 1rem;
+    margin-top: 0;
+    transform: translateX(-50%);
+    transition: all 0.45s;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .nft-card {
+    .content {
+      padding: 1.5rem;
+    }
+  }
+}

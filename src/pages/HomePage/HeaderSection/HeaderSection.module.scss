@@ -1,0 +1,49 @@
+.header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    font-weight: 300;
+    font-size: 4.0625rem;
+    line-height: 5.3125rem;
+    color: #fff;
+    letter-spacing: 0.06em;
+  }
+
+  button {
+    border-radius: 2.1875rem;
+    border: 0;
+    padding: 0.09375rem;
+    background: linear-gradient(131.47deg, #D95DDC 5.65%, #528BE6 100%);
+
+    .content {
+      border-radius: 2.1875rem;
+      padding: 1.5rem 3.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.125rem;
+      background: linear-gradient(134deg, #D95DDC -350%, #1e1d25 100%);
+      filter: drop-shadow(0px 10px 35px rgba(0, 0, 0, 0.15));
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 0.75rem;
+      line-height: 1.125rem;
+      letter-spacing: 0.1em;
+      color: #FFFFFF;
+    }
+    .arrow {
+      width: 0.8125rem;
+      height: 0.4375rem;
+    }
+  }
+}
+
+@media all and (max-width: 700px) {
+  .header-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
